@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script src="./scripts/check.js"></script>
+    <script>
+      check("./")
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>時計 | 府中市立第五中学校</title>
+    <link rel="stylesheet" href="/_static/original/styles/reset.css" />
+    <link rel="stylesheet" href="/_static/original/styles/style.css" />
+    <link rel="stylesheet" href="/_static/original/styles/header.css" />
+  </head>
+  <body>
+    <header class="header-wrapper main-header">
+      <h1><a href="/_static/original/index.html">府中市立府中第五中学校</a></h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="/_static/original/irregular-verbs/index.html">不規則動詞</a></li>
+          <li><a href="/_static/original/clock.html">時計</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="wrapper">
+      <div>
+        <input type="checkbox" id="notice" class="notice-is-open" />
+        <div class="notice">
+          <div class="message">
+            これは屋外部活で外が暗くなってきたときに遠くからでも見える時計を目的として作りました。屋外で使用する場合は雨や砂等に十分注意してください。
+          </div>
+          <label for="notice" class="close-button">×</label>
+        </div>
+      </div>
+
+      <div class="clock">
+        <div class="hours"><span id="hours">18</span>時</div>
+        <div class="details">
+          <span id="minutes" class="minutes">20</span>分
+          <span id="seconds" class="seconds">10</span>秒
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <small>© 2022-2023 ISHIDA Kouji.</small>
+      </div>
+    </footer>
+    <script src="/_static/original/scripts/clock.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC9CAsX1RIaIR2-HUdg1HQniSOYy3MbekI",
+        authDomain: "tvwvu4894wrka7wuw9a5wdr62wt598.firebaseapp.com",
+        projectId: "tvwvu4894wrka7wuw9a5wdr62wt598",
+        storageBucket: "tvwvu4894wrka7wuw9a5wdr62wt598.appspot.com",
+        messagingSenderId: "368566512260",
+        appId: "1:368566512260:web:c781e2bb71724f17c370d1",
+        measurementId: "G-358LN9EBG5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

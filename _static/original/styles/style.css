@@ -1,0 +1,179 @@
+:root {
+  --color: #000;
+  --background: #fff;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(100% - 20px);
+  width: 1024px;
+}
+
+body {
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", SegoeUI, "Yu Gothic UI", "Meiryo UI",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+.notice {
+  background: #f8f9fa;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+}
+
+.notice-is-open {
+  position: absolute;
+  left: -100vw;
+}
+
+.notice-is-open:checked + .notice {
+  display: none;
+}
+
+.notice .close-button {
+  font-size: 1.5rem;
+  line-height: 1rem;
+}
+
+/* メイン */
+main {
+  flex: 1;
+}
+
+/* フッター */
+footer {
+  background: #f8f9fa;
+  text-align: center;
+  line-height: 5rem;
+}
+
+/* トップページ */
+.app-list {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.app-list a {
+  color: var(--color);
+  display: block;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.app-list img {
+  width: 200px;
+  display: block;
+}
+
+/* 時計 */
+.clock {
+  font-family: Consolas, monospace;
+  line-height: 0.7;
+  margin: 70px auto 70px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.hours {
+  font-size: 2rem;
+}
+
+.hours span {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.details {
+  font-size: 3rem;
+}
+
+.minutes {
+  font-size: 40rem;
+  font-weight: bold;
+}
+
+.seconds {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+/* WGBT */
+.app-container {
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.settings {
+  display: flex;
+}
+
+.settings dl {
+  display: flex;
+}
+
+.settings dt {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.settings dd {
+  margin-right: 20px;
+}
+
+.settings input {
+  width: 50px;
+}
+
+.main-container {
+  display: flex;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.weather-input {
+  margin-top: 20px;
+}
+
+.weather-input label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.weather-input input {
+  display: block;
+  font-size: 3rem;
+  width: 6rem;
+}
+
+.main-container h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.wgbt-val {
+  font-size: 16rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: -40px;
+}
+
+.description {
+  background: #000;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  width: 100%;
+}

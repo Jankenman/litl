@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fileプロトコルでは動作しません。 | 府中市立第五中学校</title>
+
+    <style>
+      h1,
+      p {
+        margin: 40px 0;
+      }
+
+      html {
+        font-size: 1.2rem;
+      }
+
+      body {
+        background: darkred;
+        color: white;
+        line-height: 300%;
+        margin: 0;
+      }
+
+      .wrapper {
+        margin: 0 auto;
+        width: 800px;
+        max-width: calc(100% - 20px);
+      }
+
+      code:not(pre code) {
+        background: white;
+        border-radius: 3px;
+        color: black;
+        font-family: Consolas, monospace;
+        padding: 2px 7px;
+        margin: 0 5px;
+      }
+
+      pre {
+        background: white;
+        border-radius: 3px;
+        color: black;
+        font-family: Consolas, monospace;
+        line-height: 150%;
+        padding: 20px;
+      }
+
+      a {
+        color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>
+        エラー。このウェブサイトは Cloud9
+        で実行することを想定して実装されています。このウェブサイトを正しく実行できません。<code>file:</code>プロトコルでは実行できません。
+      </h1>
+      <p>
+        <strong
+          ><code>http(s):</code>環境で実行してください。(Cloud9
+          などで実行してください。)</strong
+        >
+      </p>
+      <p>
+        このWebサイトは<code>http(s):</code>を必須とするプログラムがあり，また，トップページが
+        <code>/_static/original/index.html</code>
+        のディレクトリ構成になるように配置されている必要があります。理由:
+      </p>
+      <ul>
+        <li>このウェブサイトではルートパスを使用しています。</li>
+        <li>
+          <code>file:</code>プロトコルでは一部のプログラムで CORS
+          エラーが発生します。
+        </li>
+      </ul>
+      <p>解決策の例にこれらが挙げられます:</p>
+      <ol>
+        <li>Cloud9 の環境で実行する。</li>
+        <li>
+          Node.jsなどを利用して，ローカルサーバーを立ててください。<code
+            >http://localhost:***/</code
+          >
+        </li>
+        <li>特設ページで見る。詳細は下。</li>
+      </ol>
+      <h2>Cloud9 で見る</h2>
+      <ol>
+        <li>
+          <a
+            href="https://lifeistech-lesson.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Life is Tech!</a
+          >
+          を経由して Cloud9 を開く。
+        </li>
+        <li>
+          画面左端のファイル一覧で，<code>litl-LessonWebDesignEditorRole...</code>フォルダを選択。<br />
+          (大抵の場合，一番上にあります。)
+        </li>
+        <li>
+          Cloud9 のヘッダーメニューから [<code>File</code>] > [<code
+            >Upload local files...</code
+          >]
+        </li>
+        <li>
+          <code>original</code>フォルダをアップロードしてください。
+          (アップロードが完了したらアップロードダイアログを閉じてください。)
+        </li>
+        <li>
+          アップロードしたフォルダの<code>original/index.html</code>をダブルクリックして開いてください。
+        </li>
+        <li>
+          ヘッダメニュー中央から <code>Preview</code> >
+          <code>Preview File index.html</code> をクリック。
+        </li>
+        <li>
+          (任意)
+          右側に表示されたプレビューブラウザの新しいウィンドウアイコンをクリックするすることで大きく表示できます。
+        </li>
+      </ol>
+      <h2>Node.js などを利用してローカルサーバーを立てる</h2>
+      <p>
+        開発環境のインストールや，少々のプログラムの記述が必要になります。
+        しかし安心してください。どちらも難しいものではありません。
+        プログラムも十数行しかありません。
+      </p>
+      <ol>
+        <li>
+          <a
+            href="https://nodejs.org/ja/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://nodejs.org/ja/</a
+          >を開き，Node.jsをダウンロードします。
+        </li>
+        <li>
+          ダウンロードされたインストーラーを実行します。ライセンスに同意し，それ以外はデフォルトで
+          <code>Next ></code>で構いません。
+        </li>
+        <li>
+          完了したら，コマンドプロンプトを開いて，<code>node --version</code
+          >と入力してください。<code>v*.*.*</code>
+          と表示されたら成功です。失敗した場合はもう一度，インストールからやり直すか，あきらめてください。
+        </li>
+        <li>
+          任意のディレクトリを作成してください。そのディレクトリ内でコマンドプロンプトを開いて，<code
+            >npm init -y</code
+          >と入力してください。
+        </li>
+        <li>
+          続いて，<code>npm install express --save</code>と入力してください。
+        </li>
+        <li>次に同一ディレクトリに<code>app.js</code>を作成してください。</li>
+        <li>
+          先ほど開いたコマンドプロンプトで実行してください:
+          <code>notepad app.js</code>
+        </li>
+        <li>
+          メモ帳が開きましたか? メモ帳で入力してください:
+          <pre>
+<code>const express = require('express');
+const app = express();
+// パス指定用モジュール
+const path = require('path');
+
+// 8080番ポートで待ちうける
+app.listen(8080, () => {
+  console.log('Running at Port 8080...');
+});
+
+// 静的ファイルのルーティング
+app.use(express.static(path.join(__dirname, 'public')));
+
+// その他のリクエストに対する404エラー
+app.use((req, res) => {
+  res.sendStatus(404);
+});</code></pre>
+        </li>
+        <li>
+          このディレクトリに，<code>_static</code>フォルダを(中のファイルだけでなく，フォルダごとです)コピーしてください。
+        </li>
+        <li>
+          先ほど開いたコマンドプロンプトで，<code>node app.js</code
+          >と入力してください。続いて，<a
+            href="http://localhost:8080/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >http://localhost:8080/</a
+          >にアクセスしてください。
+        </li>
+        <li>成功しましたか? Node.jsの方法は以上です。</li>
+      </ol>
+      <h2>特設ページ</h2>
+      <p><a href="https://tvwvu4894wrka7wuw9a5wdr62wt598.web.app/">https://tvwvu4894wrka7wuw9a5wdr62wt598.web.app/</a>で見る。</p>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC9CAsX1RIaIR2-HUdg1HQniSOYy3MbekI",
+        authDomain: "tvwvu4894wrka7wuw9a5wdr62wt598.firebaseapp.com",
+        projectId: "tvwvu4894wrka7wuw9a5wdr62wt598",
+        storageBucket: "tvwvu4894wrka7wuw9a5wdr62wt598.appspot.com",
+        messagingSenderId: "368566512260",
+        appId: "1:368566512260:web:c781e2bb71724f17c370d1",
+        measurementId: "G-358LN9EBG5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+:root {
+  --default-color: #000;
+  --background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(100% - 20px);
+  width: 600px;
+}
+
+.list-link-view {
+  border: solid 1px #e2e8f0;
+  border-radius: 5px;
+}
+
+.list-link-view li + li {
+  border-top: solid 1px #e2e8f0;
+}
+
+.list-link-view a {
+  color: var(--default-color);
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+
+body {
+  background: var(--background);
+  font-family: 'Segoe UI',SegoeUI,'Yu Gothic UI','Meiryo UI','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.article {
+  margin-top: 64px;
+}
+
+.article  h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 64px 0 24px;
+}
+
+.article h2 {
+  font-size: 24px;
+  margin: 64px 0 24px;
+}
+
+.article p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+}

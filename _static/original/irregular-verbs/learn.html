@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script src="../scripts/check.js"></script>
+    <script>
+      check("../");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/_static/original/styles/reset.css" />
+    <link rel="stylesheet" href="/_static/original/irregular-verbs/styles/global.css" />
+    <link rel="stylesheet" href="/_static/original/styles/header.css" />
+
+    <link rel="stylesheet" href="/_static/original/irregular-verbs/styles/style.css" />
+    <script
+      src="/_static/original/irregular-verbs/scripts/header.js"
+      type="module"
+    ></script>
+    <script
+      src="/_static/original/irregular-verbs/scripts/learn.js"
+      type="module"
+    ></script>
+
+    <title>学ぶ | 不規則変化動詞 | 府中市立第五中学校</title>
+  </head>
+  <body>
+    <header class="header-wrapper main-header">
+      <h1><a href="/_static/original/index.html">府中市立府中第五中学校</a></h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="/_static/original/irregular-verbs/index.html">不規則動詞</a></li>
+          <li><a href="/_static/original/clock.html">時計</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="js-header"></div>
+    <div id="js-iv-header"></div>
+    <main class="wrapper">
+      <h1 class="iv-headding">学ぶ</h1>
+      <div id="js-options">
+        <button
+          type="button"
+          id="js-start-button"
+          class="iv-button-default-primary iv-start-button"
+        >
+          始める
+        </button>
+        <div class="iv-options">
+          <label
+            ><input type="checkbox" checked id="js-shuffle" />
+            問題の出題順番をシャッフルする</label
+          >
+        </div>
+      </div>
+      <div id="js-question" class="iv-questions-area">
+        <div class="iv-question-header">
+          <div class="iv-question-index">
+            <span id="iv-index"></span> / <span id="iv-length"></span>
+          </div>
+          <button
+            type="button"
+            id="js-finish"
+            class="iv-button-default-secondary"
+          >
+            終了
+          </button>
+        </div>
+
+        <h2 id="js-japanese" class="iv-question-word"></h2>
+
+        <button
+          type="button"
+          id="js-view-answer"
+          class="iv-button-default-primary iv-questin-view-answer"
+        >
+          回答を見る
+        </button>
+
+        <div id="js-answer">
+          <dl class="iv-answer">
+            <div>
+              <dt>原形</dt>
+              <dd id="js-original-form"></dd>
+            </div>
+            <div>
+              <dt>過去形</dt>
+              <dd id="js-past-tense"></dd>
+            </div>
+            <div>
+              <dt>過去分詞</dt>
+              <dd id="past-participle"></dd>
+            </div>
+          </dl>
+
+          <div class="iv-judge-buttons">
+            <button
+              id="js-uncorrect-button"
+              class="iv-button-default-secondary iv-uncorrect-button"
+              type="button"
+            >
+              不正解
+            </button>
+            <button
+              id="js-correct-button"
+              class="iv-button-default-secondary iv-correct-button"
+              type="button"
+            >
+              正答
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC9CAsX1RIaIR2-HUdg1HQniSOYy3MbekI",
+        authDomain: "tvwvu4894wrka7wuw9a5wdr62wt598.firebaseapp.com",
+        projectId: "tvwvu4894wrka7wuw9a5wdr62wt598",
+        storageBucket: "tvwvu4894wrka7wuw9a5wdr62wt598.appspot.com",
+        messagingSenderId: "368566512260",
+        appId: "1:368566512260:web:c781e2bb71724f17c370d1",
+        measurementId: "G-358LN9EBG5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>
